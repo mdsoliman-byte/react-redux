@@ -16,29 +16,60 @@ const initialUserState = {
 
 // Action -> Object -> type , Payload 
 //   INCREMENT COUNTER 
-const incrementCounterAction = () => {
+const incrementCounter = () => {
     return {
         type: ADD_USER,
         payload: { name: "SHAkl" }
 
     }
 }
-const decrementCounterAction = () => {
+const decrementCounter = () => {
     return {
         type: DECREMENT
 
     }
 }
-const addUser = () => {
-    return {
-        type: DECREMENT
 
+
+// const addUser = () => {
+//     return {
+//         type: DECREMENT
+
+//     }
+// }
+// Create Deducer for counter app
+const counterReducer = (state = initialCounterState, action) => {
+    switch (action.type) {
+        case INCREMENT:
+            return {
+                ...state,
+                count: state.count + 1
+            }
+
+        case DECREMENT:
+            return {
+                ...state,
+                count: state.count -
+                 1
+            }
+        default:
+            state;
     }
 }
+
+
+
+
+
+
+
+
+
+
 // incrementCounterAction()
 //   DECREMENT COUNTER
 
 // 1. State
-// 2. dispatch -> Action 
+// 2. dispatch -> Action
 // 2.1 reducer
-// 3. update store
+// 3. update store 
