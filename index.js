@@ -1,3 +1,4 @@
+const { createStore } = require("redux")
 const INCREMENT = "INCREMENT";
 const DECREMENT = "DECREMENT";
 const ADD_USER = "ADD_USER";
@@ -45,6 +46,11 @@ const counterReducer = (state = countState, action) => {
                 count: state.count + 1,
 
             }
+        case DECREMENT:
+            return {
+                ...state,
+                count: state.count - 1,
+            }
 
         default:
             state;
@@ -52,6 +58,10 @@ const counterReducer = (state = countState, action) => {
 }
 
 
-
+// Create A Store
+// Store Methode
+// 1 . getState()
+// 2 . dispatch()
+// 3 . subscribe()
 
 
